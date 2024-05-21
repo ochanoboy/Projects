@@ -32,7 +32,7 @@ def calculate_expiration(to_date):
     return to_date_timestamp
 
 
-# Parcing data func from API
+# Parsing data func from API
 def parse_and_export(data, api_url):
     table = data.get("table", [])
 
@@ -56,7 +56,7 @@ def parse_and_export(data, api_url):
         certificates_epoch.labels(dn=dn).set(to_date_epoch)
 
 
-# Parcing vars from file func 
+# Parsing vars from file func 
 def read_variables_from_file(filename):
     variables = {}
     with open(filename, "r") as file:
