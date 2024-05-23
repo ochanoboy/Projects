@@ -1,4 +1,5 @@
 from cryptography.fernet import Fernet
+from conf import key
 import smtplib
 from email.message import EmailMessage
 from string import Template
@@ -13,8 +14,6 @@ def read_secrets(filename, key):
         decrypted_data = [f.decrypt(line).decode() for line in encrypted_data]
         return decrypted_data[0], decrypted_data[1]
 
-# key
-key = b'duzgxnD9iKkK_iY_g0F8I8go0P0XfsTD9EouPeAWPD8='
 
 # get encrypt vars from file
 account, pswd = read_secrets('secrets.txt', key)
